@@ -1,0 +1,105 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "slug": "norske-utviklere-tar-i-bruk-torsdagsprototyping",
+      "category": "UTVIKLING",
+      "title": "Norske utviklere vil ha prototypen klar før lunsj",
+      "subtitle": "Et nytt, uformelt ritual sprer seg i konsulentbransjen: Torsdagsprototyping skal gjøre veien fra idé til noe du kan ta på kortere.",
+      "author": "Maja Hovden",
+      "role": "Teknologijournalist",
+      "publishedAt": "2026-09-30T08:15:00+02:00",
+      "readTime": "4 min lesetid",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1500&q=85",
+      "imageAlt": "En utvikler jobber konsentrert ved en datamaskin",
+      "featured": true,
+      "body": [
+        "Klokken er 09.07 når det første teamet samler seg rundt skjermen. På tavla står det én setning: «Hvordan kan vi gjøre det enklere å finne riktig ekspertise?» Før lunsj skal de ha noe som faktisk virker.",
+        "Torsdagsprototyping er blitt et fast innslag hos flere norske konsulenthus. Oppskriften er enkel: Bland utviklere, designere og folk som kjenner forretningen. Velg et konkret problem. Bygg den minste mulige løsningen sammen.",
+        "– Vi pleide å bruke ukesvis på å diskutere oss fram til en kravliste. Nå starter vi med å lage noe som kan testes. Det gjør både uenighet og gode ideer synlige tidligere, sier produktutvikler Jonas Vik.",
+        "Målet er ikke å sende en halvferdig prototype rett ut til kunder. Teamene bruker dagen til å lære: Er problemet riktig forstått? Gir denne retningen mening? Hva må undersøkes før noen skriver ordentlig kode?",
+        "Flere peker på at formatet krever rom for å prøve og feile. Hvis prototypen blir en liten leveranse med en tidsfrist, mister den poenget. Den beste torsdagen kan ende med en skisse – eller med at teamet forkaster ideen før den blir dyr.",
+        "Hos konsulentselskapene som har prøvd det, er én ting allerede tydelig: De beste løsningene dukker sjelden opp i et møte der bare én faggruppe er invitert."
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "fylkene-satser-pa-designsystem-som-felles-sprak",
+      "category": "DESIGN",
+      "title": "Fylkene vil snakke samme digitale språk",
+      "subtitle": "Et samarbeid om designsystem skal gjøre offentlige tjenester enklere å forstå – og raskere å bygge.",
+      "author": "Amir Lunde",
+      "role": "Designredaktør",
+      "publishedAt": "2026-09-29T13:40:00+02:00",
+      "readTime": "3 min lesetid",
+      "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1000&q=85",
+      "imageAlt": "Fargerike skisser og designarbeid på et bord",
+      "featured": false,
+      "body": [
+        "Sju fylker går sammen om et felles designsystem for digitale innbyggertjenester. Ambisjonen er å gjøre alt fra søknadsskjemaer til informasjon om kollektivtransport lettere å kjenne igjen.",
+        "Arbeidet starter med komponentene innbyggerne møter oftest: knapper, skjemaer, navigasjon og tydelig språk. Hvert fylke beholder sin egen profil, men deler mønstre som allerede er grundig testet.",
+        "– Når det grunnleggende henger sammen, kan teamene bruke mer tid på det som er spesielt for tjenesten deres, sier prosjektleder Elise Nygård.",
+        "De første komponentene skal prøves ut i løpet av høsten. Innbyggere og fagmiljøer inviteres til å gi tilbakemelding før løsningen blir tatt i bruk på tvers."
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "strategene-vil-maale-effekt-for-de-lager-planen",
+      "category": "STRATEGI",
+      "title": "Strategene begynner med spørsmålet: Hva skal bli bedre?",
+      "subtitle": "Flere virksomheter bytter ut den tykke strategiplanen med tydelige mål og kortere læringssløyfer.",
+      "author": "Ingrid Solheim",
+      "role": "Kommentator",
+      "publishedAt": "2026-09-28T09:05:00+02:00",
+      "readTime": "5 min lesetid",
+      "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85",
+      "imageAlt": "Et team diskuterer planer rundt et møtebord",
+      "featured": false,
+      "body": [
+        "Strategiarbeidet i norske virksomheter er i endring. Konsulenter forteller om færre presentasjoner med femårsplaner og flere samtaler om hvilke resultater kundene faktisk trenger.",
+        "Det betyr ikke at langsiktig tenkning er på vei ut. Forskjellen ligger i hvordan ambisjonene følges opp. Teamene setter retning, velger noen få tegn på framgang og justerer kursen når ny kunnskap kommer til.",
+        "En god strategi kan fremdeles romme store mål. Men den må også gjøre det lett for folk i hverdagen å se hva de skal prioritere – og hvorfor akkurat det arbeidet betyr noe.",
+        "Flere rådgivermiljøer kombinerer nå strategisk rådgivning med produkt- og teknologikompetanse. Det gir kortere vei mellom beslutning og utprøving, men stiller større krav til åpenhet om hva man ennå ikke vet."
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "ki-verkstedet-flytter-inn-i-konsulentteamene",
+      "category": "ARBEIDSLIV",
+      "title": "KI-verkstedet flytter inn i konsulentteamene",
+      "subtitle": "Fra store visjoner til små grep: Nå får hvert prosjekt prøve ut sine egne KI-verktøy.",
+      "author": "Maja Hovden",
+      "role": "Teknologijournalist",
+      "publishedAt": "2026-09-27T11:20:00+02:00",
+      "readTime": "4 min lesetid",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=85",
+      "imageAlt": "Abstrakte lysformer i et digitalt nettverk",
+      "featured": false,
+      "body": [
+        "I stedet for ett sentralt KI-laboratorium får konsulentteamene nå egne verkstedtimer. Målet er å finne ut hvor verktøyene sparer tid, og hvor menneskelig vurdering fortsatt er avgjørende.",
+        "På en typisk økt tester teamet én konkret arbeidsflyt. Det kan være å oppsummere et langt intervju, finne hull i en kravliste eller lage flere tidlige tekstutkast.",
+        "Sikkerhet og kvalitet blir en del av oppgaven fra start. Kundedata holdes utenfor åpne tjenester, og alle resultater leses gjennom av en fagperson før de brukes videre.",
+        "Rådgiverne tror ikke at alle forsøk blir en suksess. Men når små eksperimenter deles på tvers, kan gode arbeidsmåter spre seg raskere enn nye verktøylisenser."
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "produktteam-far-fast-fredag-for-faglig-paafyll",
+      "category": "ARBEIDSLIV",
+      "title": "Fredag er blitt den nye fagdagen",
+      "subtitle": "Konsulentteam setter av tid til å dele det de har lært – før helgen begynner.",
+      "author": "Amir Lunde",
+      "role": "Designredaktør",
+      "publishedAt": "2026-09-26T08:30:00+02:00",
+      "readTime": "2 min lesetid",
+      "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1000&q=85",
+      "imageAlt": "Kollegaer deler mat og samtaler rundt et bord",
+      "featured": false,
+      "body": [
+        "En halvtime på slutten av fredagen kan være nok til å holde fagmiljøet levende, mener flere konsulenter. De korte samlingene handler om én ting teamet har lært den siste uka.",
+        "Noen viser fram en liten kodeforbedring. Andre deler en metode for å få bedre tilbakemeldinger i en workshop. Formatet skal være lavterskel, uten store presentasjoner eller krav om at alt må være nytt.",
+        "– Vi blir flinkere når vi gjør kunnskapen tilgjengelig mens den fortsatt er fersk, sier utvikler Nora Berg."
+      ]
+    }
+  ]
+}
