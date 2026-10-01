@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:portless": "portless run --name bg tsx server/portless-dev.ts",
     "dev:server": "tsx server/index.ts",
     "dev:web": "vite --host 0.0.0.0",
     "typecheck": "tsc --noEmit",
@@ -30,6 +31,7 @@
     "@types/node": "^26.6.3",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "portless": "^0.13.0",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }

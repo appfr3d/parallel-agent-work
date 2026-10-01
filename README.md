@@ -15,6 +15,12 @@ npm run dev
 
 Du kan også bygge frontend med `npm run build` og kjøre API-et med `npm start`.
 
+## Parallelle worktrees med Portless
+
+Kjør `npm run dev:portless` for å få en navngitt lokal URL som er unik for Git-worktreet. Det gjør det enklere å kjøre og sammenligne flere agentversjoner samtidig på samme maskin. Den vanlige `npm run dev` er fortsatt tilgjengelig for oppsettet uten Portless. Første Portless-oppstart kan be om å sette opp lokal HTTPS og proxy.
+
+Se [WORKSHOP_PORTLESS.md](./WORKSHOP_PORTLESS.md) for oppsett og workshopoppgaver.
+
 ## Slik henger det sammen
 
 - `src/` er React-nettsiden i TypeScript, servert og bygget av Vite.
