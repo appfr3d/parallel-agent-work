@@ -609,10 +609,11 @@ the overview to me.</pre>
       <h2 class="r" style="--i:1">Build → review → <em>fix</em></h2>
       <div class="prompt r" style="--i:2">
         <div class="prompt-head"><span class="prompt-to">Give to <b>main-agent</b></span><button class="copy" data-copy-prompt>Copy</button></div>
-<pre>Ask @implementation-agent to add a category filter to the article list in its
-worktree. Ask it to keep the change focused and, when finished, send you the
-worktree path, a short summary, whether npm run build succeeded, and the
-absolute path to screenshots/front-page.png after running npm run test:ui.
+<pre>Ask @implementation-agent to add a dedicated filter bar to the article list in
+its worktree, separate from the category links in the nav. Ask it to keep the
+change focused and, when finished, send you the worktree path, a short
+summary, whether npm run build succeeded, and the absolute path to
+screenshots/front-page.png after running npm run test:ui.
 
 When it reports back, ask @review-agent to review the implementation at that
 worktree path. Ask for critical correctness issues only. If it finds one,
