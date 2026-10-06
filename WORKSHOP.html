@@ -276,7 +276,83 @@
   .slide.is-active .shot img { animation: lift .8s var(--ease) both; animation-delay: inherit; }
   @keyframes lift { from { filter: blur(2px); } to { filter: none; } }
 
+  /* ---------- Parallel preview diagram ---------- */
+  .topo { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin-top: 8px; max-width: 1000px; }
+  .tree { display: flex; flex-direction: column; align-items: stretch; }
+  .tree-head { border: 1px solid var(--ink); background: var(--white); padding: 12px 16px; }
+  .tree-head b { display: block; font: 600 16px var(--display); letter-spacing: -.02em; }
+  .tree-head small { font: 11px var(--mono); color: var(--muted); }
+  .wire { height: 26px; display: flex; justify-content: center; }
+  .wire span {
+    width: 2px; height: 100%;
+    background: repeating-linear-gradient(to bottom, var(--ink) 0 4px, transparent 4px 8px);
+    background-size: 2px 8px; animation: flow .8s linear infinite;
+  }
+  @keyframes flow { to { background-position: 0 8px; } }
+  .url {
+    align-self: center; padding: 8px 14px; border-radius: 999px; background: var(--ink); color: var(--paper);
+    font: 12.5px var(--mono); white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+  }
+  .url span { color: var(--green); }
+  .mock {
+    margin-top: 14px; height: 120px; border: 1px solid var(--line); background: var(--white);
+    padding: 12px; display: grid; gap: 6px;
+  }
+  .mock i { display: block; background: #e5e1da; }
+  .mock--editorial { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 10px 10px; }
+  .mock--editorial i:nth-child(1) { grid-row: 1 / 2; background: #c9c3b8; }
+  .mock--editorial i:nth-child(2) { grid-row: 1 / 4; grid-column: 2; background: var(--green); }
+  .mock--editorial i:nth-child(3) { background: var(--ink); width: 80%; }
+  .mock--editorial i:nth-child(4) { width: 55%; }
+  .mock--compact { grid-template-rows: repeat(6, 1fr); }
+  .mock--compact i { height: 7px; align-self: center; }
+  .mock--compact i:nth-child(odd) { width: 92%; background: var(--ink); }
+  .mock--compact i:nth-child(even) { width: 70%; }
+  .mock--compact i:nth-child(1) { background: var(--green); border-left: 18px solid var(--ink); }
+  .proxy {
+    grid-column: 1 / -1; margin-top: 18px; padding: 12px 18px; background: var(--green);
+    font: 600 15px var(--display); display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap;
+  }
+  .proxy small { font: 11px var(--mono); letter-spacing: .06em; color: var(--ink); opacity: .7; }
+  .viewers { grid-column: 1 / -1; margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .viewers-label { font: 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
+  .who { padding: 6px 12px; border: 1px solid var(--ink); border-radius: 999px; font-size: 13px; background: var(--white); }
+  .who--you { background: var(--ink); color: var(--paper); }
+
+  /* ---------- Results ---------- */
+  .results { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; max-width: 980px; }
+  .result { border: 1px solid var(--ink); background: var(--white); display: flex; flex-direction: column; }
+  .thumb {
+    position: relative; display: block; height: clamp(150px, 28vh, 260px); overflow: hidden;
+    background: repeating-linear-gradient(135deg, #efebe5 0 10px, #f7f3ef 10px 20px); border-bottom: 1px solid var(--ink);
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .5s var(--ease); }
+  .thumb:hover img { transform: scale(1.03); }
+  .thumb-empty { position: absolute; inset: 0; display: none; place-items: center; font: 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .thumb.is-empty img { display: none; }
+  .thumb.is-empty .thumb-empty { display: grid; }
+  .result-body { padding: 14px 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; }
+  .result-body b { font: 600 16px var(--display); }
+  .result-body small { font: 11px var(--mono); color: var(--muted); letter-spacing: .06em; }
+  .result-links { margin-left: auto; display: flex; gap: 8px; }
+  .result-links a, .outro-links a {
+    color: var(--ink); text-decoration: none; font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase;
+    padding: 8px 12px; border: 1px solid var(--ink); border-radius: 999px; transition: background .2s, border-color .2s;
+  }
+  .result-links a:hover { background: var(--green); border-color: var(--green); }
+  .hint-line { font: 11px var(--mono); color: var(--muted); letter-spacing: .06em; margin-top: 18px; }
+  .outro-links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+  .outro-links a {
+    color: var(--paper); border-color: #6b6b6b; padding: 14px 20px; font-size: 13px; display: flex; flex-direction: column; gap: 4px;
+    border-radius: 0;
+  }
+  .outro-links a small { font-size: 10px; color: #a9a9a9; }
+  .outro-links a:hover { background: var(--green); border-color: var(--green); color: var(--ink); }
+  .outro-links a:hover small { color: var(--ink); }
+
   @media (max-width: 760px) {
+    .topo, .results { grid-template-columns: 1fr; }
+    .topo .tree + .tree { margin-top: 18px; }
     .shots, .split { grid-template-columns: 1fr; }
     .hint { display: none; }
     .compare { grid-template-columns: 1fr; }
@@ -445,7 +521,7 @@ the overview to me.</pre>
       <ul class="points">
         <li class="r" style="--i:2"><span>01</span><div>Same Git repo, its own branch and folder</div></li>
         <li class="r" style="--i:3"><span>02</span><div>Edits stay out of your main checkout while the agent works</div></li>
-        <li class="r" style="--i:4"><span>03</span><div>No shared <code>node_modules</code> — install per worktree</div></li>
+        <li class="r" style="--i:4"><span>03</span><div>Lives in <code>.claude/worktrees/&lt;name&gt;</code></div></li>
       </ul>
     </div>
   </section>
@@ -460,11 +536,6 @@ the overview to me.</pre>
           <div><p class="step-text">In a <b>new terminal</b> in this project folder:</p>
             <div class="cmd"><span class="cmd-where">Terminal</span><pre>claude --worktree implementation-agent --name implementation-agent</pre><button class="copy" data-copy>Copy</button></div>
             <p class="step-text"><small>Creates <code>.claude/worktrees/implementation-agent</code> on a new branch.</small></p></div>
-        </div>
-        <div class="step r" style="--i:3">
-          <div class="step-num">2</div>
-          <div><p class="step-text">Install dependencies inside that session:</p>
-            <div class="cmd claude"><span class="cmd-where">implementation-agent</span><pre>! npm install</pre><button class="copy" data-copy>Copy</button></div></div>
         </div>
       </div>
       <p class="note r" style="--i:4">Keep main-agent and review-agent open.</p>
@@ -486,31 +557,10 @@ the overview to me.</pre>
     <div class="slide-inner">
       <div class="kicker r" style="--i:0">Concept</div>
       <h2 class="r" style="--i:1">See it without <em>running</em> it<span class="dot">.</span></h2>
-      <p class="lead r" style="--i:2">A UI test opens the front page and saves a full-page screenshot to <code>screenshots/front-page.png</code> — in whichever worktree it runs from.</p>
-      <p class="lead r" style="--i:3;margin-top:16px">Agents send you the path. You open the image.</p>
-    </div>
-  </section>
-
-  <section class="slide" data-part="Part 2 · Worktrees">
-    <div class="slide-inner">
-      <div class="kicker r" style="--i:0">Do this</div>
-      <h2 class="r" style="--i:1">Screenshot tests</h2>
-      <div class="steps">
-        <div class="step r" style="--i:2">
-          <div class="step-num">1</div>
-          <div><p class="step-text">Once per machine:</p>
-            <div class="cmd"><span class="cmd-where">Terminal</span><pre>npx playwright install chromium</pre><button class="copy" data-copy>Copy</button></div></div>
-        </div>
-        <div class="step r" style="--i:3">
-          <div class="step-num">2</div>
-          <div><p class="step-text">Starts its own dev server on <code>:5173</code> <small>— fails if one is already running</small></p>
-            <div class="cmd"><span class="cmd-where">Terminal</span><pre>npm run test:ui</pre><button class="copy" data-copy>Copy</button></div></div>
-        </div>
-        <div class="step r" style="--i:4">
-          <div class="step-num">3</div>
-          <div><p class="step-text">Or test a preview that's already running:</p>
-            <div class="cmd"><span class="cmd-where">Terminal</span><pre>BASE_URL=https://example.bg.localhost npm run test:ui</pre><button class="copy" data-copy>Copy</button></div></div>
-        </div>
+      <p class="lead r" style="--i:2">Agents run a UI test that screenshots the front page to <code>screenshots/front-page.png</code> — inside their own worktree. They send you the path; you open the image.</p>
+      <div class="steps r" style="--i:3;margin-top:32px">
+        <p class="step-text">You only need to do this once per machine:</p>
+        <div class="cmd"><span class="cmd-where">Terminal</span><pre>npx playwright install chromium</pre><button class="copy" data-copy>Copy</button></div>
       </div>
     </div>
   </section>
@@ -558,8 +608,8 @@ outcome to me with the screenshot path so I can see the result.</pre>
         </div>
         <div class="panel r" style="--i:3">
           <h3>npm run dev:portless</h3>
-          <div class="route"><span>https://a.bg.localhost</span><span class="tag tag--good">own port</span></div>
-          <div class="route"><span>https://b.bg.localhost</span><span class="tag tag--good">own port</span></div>
+          <div class="route"><span>worktree-a.bg.localhost</span><span class="tag tag--good">own port</span></div>
+          <div class="route"><span>worktree-b.bg.localhost</span><span class="tag tag--good">own port</span></div>
           <div class="route"><span>UI + API behind one route</span><span class="tag tag--good">isolated</span></div>
         </div>
       </div>
@@ -571,7 +621,7 @@ outcome to me with the screenshot path so I can see the result.</pre>
       <div class="kicker r" style="--i:0">Concept</div>
       <h2 class="r" style="--i:1">Portless gives each worktree a <em>name</em><span class="dot">.</span></h2>
       <ul class="points">
-        <li class="r" style="--i:2"><span>01</span><div>A named <code>.localhost</code> URL per branch</div></li>
+        <li class="r" style="--i:2"><span>01</span><div>The URL comes from the worktree's branch:<br><code>https://worktree-implementation-agent.bg.localhost</code></div></li>
         <li class="r" style="--i:3"><span>02</span><div>A free local port assigned behind it</div></li>
         <li class="r" style="--i:4"><span>03</span><div>Local HTTPS via a proxy on <code>:443</code> — needs <code>sudo</code> once</div></li>
       </ul>
@@ -610,16 +660,11 @@ outcome to me with the screenshot path so I can see the result.</pre>
         </div>
         <div class="step r" style="--i:3">
           <div class="step-num">2</div>
-          <div><p class="step-text">Install dependencies inside it:</p>
-            <div class="cmd claude"><span class="cmd-where">parallel-agent</span><pre>! npm install</pre><button class="copy" data-copy>Copy</button></div></div>
-        </div>
-        <div class="step r" style="--i:4">
-          <div class="step-num">3</div>
           <div><p class="step-text">In main, confirm all three others are listed:</p>
             <div class="cmd claude"><span class="cmd-where">main-agent</span><pre>/list-agents</pre><button class="copy" data-copy>Copy</button></div></div>
         </div>
       </div>
-      <p class="note r" style="--i:5">This is the last manual setup. From here, only talk to main-agent.</p>
+      <p class="note r" style="--i:4">This is the last manual setup. From here, only talk to main-agent.</p>
     </div>
   </section>
 
@@ -653,18 +698,66 @@ review to me, including both screenshot paths. Do not merge the branches.</pre>
     </div>
   </section>
 
+  <section class="slide" data-part="Part 3 · Portless">
+    <div class="slide-inner">
+      <div class="kicker r" style="--i:0">What's happening</div>
+      <h2 class="r" style="--i:1">Two designs, <em>live</em>, side by side<span class="dot">.</span></h2>
+      <div class="topo">
+        <div class="tree r" style="--i:2">
+          <div class="tree-head"><b>implementation-agent</b><small>.claude/worktrees/implementation-agent</small></div>
+          <div class="wire"><span></span></div>
+          <div class="url">https://worktree-implementation-agent<span>.bg.localhost</span></div>
+          <div class="mock mock--editorial"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="tree r" style="--i:3">
+          <div class="tree-head"><b>parallel-agent</b><small>.claude/worktrees/parallel-agent</small></div>
+          <div class="wire"><span></span></div>
+          <div class="url">https://worktree-parallel-agent<span>.bg.localhost</span></div>
+          <div class="mock mock--compact"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="proxy r" style="--i:4">Portless proxy <small>:443 · routes each name to its own port</small></div>
+        <div class="viewers r" style="--i:5">
+          <span class="viewers-label">Anyone can open both</span>
+          <span class="who who--you">You</span><span class="who">main-agent</span><span class="who">review-agent</span><span class="who">implementation-agent</span><span class="who">parallel-agent</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="slide" data-part="Wrap-up">
     <div class="slide-inner">
-      <div class="kicker r" style="--i:0">Wrap-up</div>
-      <h2 class="r" style="--i:1">Open both <em>screenshots</em><span class="dot">.</span></h2>
-      <p class="lead r" style="--i:2">Compare the two treatments yourself — or open both preview URLs side by side.</p>
-      <table class="r" style="--i:3">
-        <thead><tr><th>Mode</th><th>Command</th><th>Preview</th><th>Parallel worktrees</th></tr></thead>
-        <tbody>
-          <tr><td>Standard</td><td><code>npm run dev</code></td><td><code>localhost:5173</code></td><td>Fixed API port — they collide</td></tr>
-          <tr><td>Portless</td><td><code>npm run dev:portless</code></td><td><code>https://…bg.localhost</code></td><td>Separate named previews</td></tr>
-        </tbody>
-      </table>
+      <div class="kicker r" style="--i:0">Your turn</div>
+      <h2 class="r" style="--i:1">Look at what they <em>built</em><span class="dot">.</span></h2>
+      <p class="lead r" style="--i:2">Each agent saved a screenshot inside its own worktree. Open them and compare.</p>
+      <div class="results">
+        <div class="result r" style="--i:3">
+          <a class="thumb" href=".claude/worktrees/implementation-agent/screenshots/front-page.png" target="_blank">
+            <img data-shot src=".claude/worktrees/implementation-agent/screenshots/front-page.png" alt="implementation-agent front page screenshot">
+            <span class="thumb-empty">No screenshot yet</span>
+          </a>
+          <div class="result-body">
+            <b>implementation-agent</b><small>Editorial, image-led</small>
+            <div class="result-links">
+              <a href=".claude/worktrees/implementation-agent/screenshots/front-page.png" target="_blank">Screenshot ↗</a>
+              <a href=".claude/worktrees/implementation-agent/screenshots/" target="_blank">Folder ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="result r" style="--i:4">
+          <a class="thumb" href=".claude/worktrees/parallel-agent/screenshots/front-page.png" target="_blank">
+            <img data-shot src=".claude/worktrees/parallel-agent/screenshots/front-page.png" alt="parallel-agent front page screenshot">
+            <span class="thumb-empty">No screenshot yet</span>
+          </a>
+          <div class="result-body">
+            <b>parallel-agent</b><small>Compact headlines</small>
+            <div class="result-links">
+              <a href=".claude/worktrees/parallel-agent/screenshots/front-page.png" target="_blank">Screenshot ↗</a>
+              <a href=".claude/worktrees/parallel-agent/screenshots/" target="_blank">Folder ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="hint-line r" style="--i:5">Links work when this file is opened from the project folder.</p>
     </div>
   </section>
 
@@ -672,7 +765,10 @@ review to me, including both screenshot paths. Do not merge the branches.</pre>
     <div class="slide-inner">
       <div class="kicker r" style="--i:0">That's it</div>
       <h1 class="r" style="--i:1">Ship it <em>together</em><span class="dot" style="color:var(--green)">.</span></h1>
-      <p class="lead r" style="--i:2;margin-top:24px">More on cross-session messaging: <a href="https://code.claude.com/docs/en/cross-session-messaging" style="color:var(--green)">code.claude.com/docs</a></p>
+      <div class="outro-links r" style="--i:2">
+        <a href="https://code.claude.com/docs/en/cross-session-messaging" target="_blank"><small>Claude Code</small>Cross-session messaging ↗</a>
+        <a href="https://portless.sh" target="_blank"><small>Portless</small>portless.sh ↗</a>
+      </div>
     </div>
   </section>
 
@@ -777,6 +873,14 @@ review to me, including both screenshot paths. Do not merge the branches.</pre>
   // Highlight @mentions in prompts
   document.querySelectorAll('.prompt pre').forEach(pre => {
     pre.innerHTML = pre.innerHTML.replace(/@[a-z-]+/g, m => `<span class="mention">${m}</span>`);
+  });
+
+  // Worktree screenshot thumbnails: bust cache, show placeholder if missing
+  document.querySelectorAll('img[data-shot]').forEach(img => {
+    const wrap = img.closest('.thumb');
+    img.addEventListener('error', () => wrap.classList.add('is-empty'));
+    img.addEventListener('load', () => wrap.classList.remove('is-empty'));
+    img.src = img.getAttribute('src') + '?t=' + Date.now();
   });
 
   const fromHash = parseInt(location.hash.slice(1), 10);
