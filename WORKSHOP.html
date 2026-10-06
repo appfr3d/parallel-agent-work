@@ -276,6 +276,23 @@
   .slide.is-active .shot img { animation: lift .8s var(--ease) both; animation-delay: inherit; }
   @keyframes lift { from { filter: blur(2px); } to { filter: none; } }
 
+  /* ---------- App intro ---------- */
+  .browser { margin: 0; border: 1px solid var(--ink); background: var(--white); box-shadow: 8px 8px 0 var(--green); }
+  .browser-bar {
+    display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-bottom: 1px solid var(--line);
+    font: 11px var(--mono); color: var(--muted);
+  }
+  .browser-bar i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .browser-bar span { margin-left: 8px; padding: 2px 10px; background: #efebe5; border-radius: 999px; }
+  .browser img { display: block; width: 100%; height: clamp(220px, 50vh, 460px); object-fit: cover; object-position: top; }
+  .stack { list-style: none; padding: 0; margin: 24px 0 0; }
+  .stack li {
+    display: grid; grid-template-columns: 76px 1fr; gap: 12px; align-items: baseline;
+    padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.4;
+  }
+  .stack li:last-child { border-bottom: 1px solid var(--line); }
+  .stack li span { font: 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
   /* ---------- Parallel preview diagram ---------- */
   .topo { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin-top: 8px; max-width: 1000px; }
   .tree { display: flex; flex-direction: column; align-items: stretch; }
@@ -387,6 +404,27 @@
         <div class="chip"><i>2</i>Delegate in a worktree</div>
         <div class="chip"><i>3</i>Parallel previews</div>
       </div>
+    </div>
+  </section>
+
+  <section class="slide" data-part="Intro">
+    <div class="slide-inner split">
+      <div>
+        <div class="kicker r" style="--i:0">The playground</div>
+        <h2 class="r" style="--i:1">Meet <em>BG</em> — Bekk's Gang<span class="dot">.</span></h2>
+        <p class="lead r" style="--i:2">A small, fictional news site about consultant-Norway. Five articles, category filters, an article view — just enough for agents to change.</p>
+        <ul class="stack">
+          <li class="r" style="--i:3"><span>Frontend</span><div>React 19 + TypeScript, served by <b>Vite</b> on <code>:5173</code></div></li>
+          <li class="r" style="--i:4"><span>API</span><div><b>Express</b> on <code>:3001</code> — <code>/api/articles</code>, <code>/api/health</code></div></li>
+          <li class="r" style="--i:5"><span>Data</span><div>A plain JSON file via <b>lowdb</b> — no database server</div></li>
+          <li class="r" style="--i:6"><span>Design</span><div><b>Kilden</b> design system, <code>ild-light</code> theme</div></li>
+          <li class="r" style="--i:7"><span>Tests</span><div><b>Playwright</b> screenshots the front page</div></li>
+        </ul>
+      </div>
+      <figure class="browser r" style="--i:3">
+        <div class="browser-bar"><i></i><i></i><i></i><span>localhost:5173</span></div>
+        <img src="workshop-images/bg-front-page.png" alt="The BG — Bekk's Gang front page: headline 'Det skjer mer enn du tror.' above a lead article and a list of more stories">
+      </figure>
     </div>
   </section>
 
