@@ -1,5 +1,7 @@
 node_modules/
 dist/
-screenshots/
 .DS_Store
 *.log
+test-results/
+playwright-report/
+.claude/worktrees/
